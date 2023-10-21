@@ -46,6 +46,19 @@ const queries = [
       row.insertCell(2).textContent = queries[i].query;
       row.insertCell(3).textContent = queries[i].status;
 
+      const actionCell = row.insertCell(4);
+      const approveLink = document.createElement("a");
+      approveLink.href = "#";
+      approveLink.textContent = "Approve";
+
+      const declineLink = document.createElement("a");
+      declineLink.href = "#";
+      declineLink.textContent = "Decline";
+
+      actionCell.appendChild(approveLink);
+      actionCell.appendChild(document.createTextNode("   "));
+      actionCell.appendChild(declineLink)
+
       i++;
     }
 }
