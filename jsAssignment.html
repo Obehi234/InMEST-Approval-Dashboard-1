@@ -12,7 +12,7 @@
 
     <h3>Welcome Lucky! You have some queries to review</h3>
     
-    <table class="table table-hover">
+    <table class="tableList table table-hover">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -28,11 +28,28 @@
 </table>
 
 <script lang="js">
-  function changeStatus(newStatus, rowId){
+const queries = [
+{id: 1, student: "Genesis", query: "Permission to absent from tech class", status: "APPROVED"},
+{id: 2, student: "Nunya", query: "Permission to Absa Hackathon", status: "APPROVED"},
+{id: 3, student: "Fleeur", query: "Permission to shoot film", status: "DECLINED"},
+{id: 4, student: "Delight", query: "Need some delightful time to cool off", status: "DECLINED"},
+{id: 5, student: "Sila", query: "Permission to participate in Absa Hackathon", status: "PENDING"},
+]
 
+  function changeStatus(){
+   const tableBody = document.querySelector(".tableList tbody")
+    let i = 0;
+    while(i < queries.length) {
+      const row = tableBody.insertRow(i);
+      row.insertCell(0).textContent = queries[i].id;
+      row.insertCell(1).textContent = queries[i].student;
+      row.insertCell(2).textContent = queries[i].query;
+      row.insertCell(3).textContent = queries[i].status;
 
-
+      i++;
+    }
 }
+changeStatus()
   
 </script>
 	
